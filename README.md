@@ -5,6 +5,7 @@
 ####html代码
 ```html
 <div class="info">
+	<img render-src="image" />
 	<span render-html="weather"></span>
 	<ul render-loop="seven_days">
 	        <li render-html="seven_days.weather"></li>
@@ -51,4 +52,7 @@ $(".info").renderValues(data);
     <span render-html="seven_days.weather"></span>
 </div>
 ```
+
+2.可以render的类型有如下一个
+render-html, render-src, render-value, render-href, render-loop, render-attr(这个类型自定义属性例子:render-attr="userid=uid")
 
