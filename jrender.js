@@ -39,7 +39,7 @@ var Render = {
             }
 
             $(child).html('');
-            values[key].each(function(index,value) {
+            $(values[key]).each(function(index,value) {
                 var childValues =  {};
                 if(typeof value!='object') {
                     var tmp = {
