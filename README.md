@@ -3,7 +3,7 @@
 
 #用法
 
-```javascript
+```html
 <div class="info">
 	<span render-html="weather"></span>
 	<ul render-loop="seven_days">
