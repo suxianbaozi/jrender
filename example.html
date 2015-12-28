@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>例子</title>
+    <script src="http://lib.sinaapp.com/js/jquery/1.9.1/jquery-1.9.1.min.js"></script>
+    <script src="jrender.js"></script>
+</head>
+<body>
+<div class="info">
+    <span render-html="weather"></span>
+    <ul render-loop="seven_days">
+        <li render-html="seven_days.weather"></li>
+    </ul>
+</div>
+<script>
+    var data = {
+        weather:'晴',
+        seven_days:[
+            {
+                weather:'阴'
+            },
+            {
+                weather:'雾霾'
+            },
+            {
+                weather:'小雨'
+            }
+        ]
+    };
+    $(".info").renderValues(data);
+    data.seven_days = [];
+    $(".info").renderValues(data);
+    data.seven_days = [
+        {
+            weather:'阴'
+        },
+        {
+            weather:'雾霾'
+        },
+        {
+            weather:'小雨'
+        }
+    ];
+    $(".info").renderValues(data);
+</script>
+</body>
+</html>

@@ -30,12 +30,14 @@ var Render = {
         } else if(key = $(child).attr('render-value')) {
             $(child).val(values[key]);
         } else if(key= $(child).attr('render-loop')) {
-            if(!$(child).rowHtml) {
+
+
+            if(!$(child).attr('row-html')) {
                 //取第一个子元素作为循环
                 var html = $(child).children()[0].outerHTML;
-                $(child).rowHtml = html;
+                $(child).attr('row-html',encodeURIComponent(html));
             } else {
-                html = $(child).rowHtml;
+                html = decodeURIComponent($(child).attr('row-html'));
             }
 
             $(child).html('');
