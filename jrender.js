@@ -3,8 +3,8 @@
  * 简单json数据展示，满足常见需求
  */
 
-RSF.regist("Render");
-Render = {
+
+var Render = {
     renderDomValues:function(dom,values){
         var key = '';
         dom.each(function(index,ele) {
