@@ -55,7 +55,10 @@ var Render = {
                 $(child).append(this.renderHtmlValues(html,childValues));
             }.bind(this));
         } else if(key= $(child).attr('render-attr')) {
-
+            var attrs = key;
+            key = attrs.split('=')[1];
+            var attr = attrs.split('=')[0];
+            $(child).attr(attr,values[key]);
         }
     },
     renderHtmlValues:function(html,values){

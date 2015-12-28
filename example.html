@@ -8,14 +8,17 @@
 </head>
 <body>
 <div class="info">
+    <img  render-src="imageIcon">
     <span render-html="weather"></span>
     <ul render-loop="seven_days">
         <li render-html="seven_days.weather"></li>
     </ul>
+    <span render-attr="userid=uid"></span>
 </div>
 <script>
     var data = {
         weather:'晴',
+        imageIcon:'http://img.tianqi.com/static/images/tianqibig/b1.png',
         seven_days:[
             {
                 weather:'阴'
@@ -26,7 +29,8 @@
             {
                 weather:'小雨'
             }
-        ]
+        ],
+        uid:1987
     };
     $(".info").renderValues(data);
     data.seven_days = [];
