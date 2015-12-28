@@ -31,4 +31,24 @@ $(".info").renderValues(data);
 ```
 #说明
 1.所有的数据展示都是在某一个标签内
-比如<span render-html="username"></span>
+比如
+```html
+<span render-html="username"></span>
+```
+循环类型的只循环，子元素的第一个元素，所以尽量套一个div进去
+```html
+<div render-loop="seven_days">
+    <div>
+    	<span render-html="seven_days.temperature"></span>
+    	<span render-html="seven_days.weather"></span>
+    </div>
+</div>
+```
+####错误的写法
+```html
+<div render-loop="seven_days">
+    <span render-html="seven_days.temperature"></span>
+    <span render-html="seven_days.weather"></span>
+</div>
+```
+
