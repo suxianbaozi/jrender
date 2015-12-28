@@ -5,7 +5,6 @@
 ####html代码
 ```html
 <div class="info">
-	<img render-src="image" />
 	<span render-html="weather"></span>
 	<ul render-loop="seven_days">
 	        <li render-html="seven_days.weather"></li>
