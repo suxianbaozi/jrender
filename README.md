@@ -3,13 +3,14 @@
 
 #用法
 
-&lt;div class=&quot;info&quot;&gt;
-	&lt;span render-html=&quot;weather&quot;&gt;&lt;/span&gt;
-	&lt;ul render-loop=&quot;seven_days&quot;&gt;
-		&lt;li render-html=&quot;seven_days.weather&quot;&gt;&lt;/li&gt;
-	&lt;/ul&gt;
-&lt;/div&gt;
-
+```javascript
+<div class="info">
+	<span render-html="weather"></span>
+	<ul render-loop="seven_days">
+	        <li render-html="seven_days.weather"></li>
+	</ul>
+</div>
+```
 #说明
 1.所有的数据展示都是在某一个标签内
 比如<span render-html="username"></span>
