@@ -11,7 +11,7 @@
 	</ul>
 </div>
 ```
-####html代码
+####js代码
 ```javascript
 var data = {
     weather:'晴',
