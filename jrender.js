@@ -23,13 +23,17 @@ var Render = {
         var key = '';
         if(key = $(child).attr('render-html')) {
             $(child).html(values[key]);
-        } else if(key = $(child).attr('render-src')) {
+        }
+        if(key = $(child).attr('render-src')) {
             $(child).attr("src",values[key]);
-        } else if(key = $(child).attr('render-href')) {
+        }
+        if(key = $(child).attr('render-href')) {
             $(child).attr("href",values[key]);
-        } else if(key = $(child).attr('render-value')) {
+        }
+        if(key = $(child).attr('render-value')) {
             $(child).val(values[key]);
-        } else if(key= $(child).attr('render-loop')) {
+        }
+        if(key= $(child).attr('render-loop')) {
 
 
             if(!$(child).attr('row-html')) {
@@ -54,7 +58,8 @@ var Render = {
                 }
                 $(child).append(this.renderHtmlValues(html,childValues));
             }.bind(this));
-        } else if(key= $(child).attr('render-attr')) {
+        }
+        if(key= $(child).attr('render-attr')) {
             var attrs = key;
             key = attrs.split('=')[1];
             var attr = attrs.split('=')[0];
