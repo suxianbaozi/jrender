@@ -1,5 +1,6 @@
 # jrender
 一个基于jQuery的json数据快速展示系统
+支持嵌套循环噢
 
 #用法
 ####html代码
