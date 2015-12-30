@@ -34,8 +34,6 @@ var Render = {
             $(child).val(values[key]);
         }
         if(key= $(child).attr('render-loop')) {
-
-
             if(!$(child).attr('row-html')) {
                 //取第一个子元素作为循环
                 var html = $(child).children()[0].outerHTML;
@@ -43,10 +41,8 @@ var Render = {
             } else {
                 html = decodeURIComponent($(child).attr('row-html'));
             }
-
             $(child).html('');
             $(values[key]).each(function(index,value) {
-                var childValues =  {};
                 if(typeof value!='object') {
                     var tmp = {
                         'self':value
@@ -54,9 +50,9 @@ var Render = {
                     value = tmp;
                 }
                 for(var childKey in value) {
-                    childValues[key+'.'+childKey] = value[childKey];
+                    values[key+'.'+childKey] = value[childKey];
                 }
-                $(child).append(this.renderHtmlValues(html,childValues));
+                $(child).append(this.renderHtmlValues(html,values));
             }.bind(this));
         }
         if(key= $(child).attr('render-attr')) {

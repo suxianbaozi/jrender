@@ -11,7 +11,12 @@
     <img  render-src="imageIcon">
     <span render-html="weather"></span>
     <ul render-loop="seven_days">
-        <li render-html="seven_days.weather"></li>
+        <li>
+            <span  render-html="seven_days.weather"></span>
+            <ul render-loop="seven_days.test">
+                <li render-html="seven_days.test.haha"></li>
+            </ul>
+        </li>
     </ul>
     <span render-attr="userid=uid"></span>
 </div>
@@ -21,15 +26,49 @@
         imageIcon:'http://img.tianqi.com/static/images/tianqibig/b1.png',
         seven_days:[
             {
-                weather:'阴'
+                weather:'阴',
+                test:[
+                {
+                    'haha':'嘿嘿'
+                },
+                {
+                    'haha':'嘿嘿2'
+                },
+                {
+                    'haha':'嘿嘿3'
+                }
+                ]
             },
             {
-                weather:'雾霾'
+                weather:'雾霾',
+                test:[
+                    {
+                        'haha':'嘿嘿4'
+                    },
+                    {
+                        'haha':'嘿嘿5'
+                    },
+                    {
+                        'haha':'嘿嘿6'
+                    }
+                ]
             },
             {
-                weather:'小雨'
+                weather:'小雨',
+                test:[
+                    {
+                        'haha':'嘿嘿7'
+                    },
+                    {
+                        'haha':'嘿嘿8'
+                    },
+                    {
+                        'haha':'嘿嘿9'
+                    }
+                ]
             }
         ],
+
         uid:1987
     };
     $(".info").renderValues(data);
