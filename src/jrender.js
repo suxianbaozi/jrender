@@ -5,22 +5,34 @@
 
 
 var Render = {
-    renderDomValues:function(dom,values){
+    renderDomValues:function(dom,values,callbacks){
+
         var key = '';
         dom.each(function(index,ele) {
-            this.renderProperty(ele,values);
+            this.renderProperty(ele,values,callbacks);
             var chidren = $(ele).find("*");
             if(chidren.length==0) {
                 return;
             }
             for(var i=0;i<chidren.length;i++) {
                 var child = chidren[i];
-                this.renderProperty(child,values);
+                this.renderProperty(child,values,callbacks);
             }
         }.bind(this));
     },
-    renderProperty:function(child,values){
+    renderProperty:function(child,values,callbacks){
         var key = '';
+        if(key = $(child).attr('render-key')){
+            var fun = '';
+            if(fun = $(child).attr('render-fun')) {
+                var f = callbacks[fun];
+                if(f) {
+                    f(child, values[key]);
+                }
+            }
+        }
+
+
         if(key = $(child).attr('render-html')) {
             $(child).html(values[key]);
         }
@@ -52,7 +64,7 @@ var Render = {
                 for(var childKey in value) {
                     values[key+'.'+childKey] = value[childKey];
                 }
-                $(child).append(this.renderHtmlValues(html,values));
+                $(child).append(this.renderHtmlValues(html,values,callbacks));
             }.bind(this));
         }
         if(key= $(child).attr('render-attr')) {
@@ -62,7 +74,7 @@ var Render = {
             $(child).attr(attr,values[key]);
         }
     },
-    renderHtmlValues:function(html,values){
+    renderHtmlValues:function(html,values,callbacks){
         var key = '';
         var dom = $("<div>"+html+"</div>");
         var chidren = dom.find("*");
@@ -71,14 +83,14 @@ var Render = {
         }
         for(var i=0;i<chidren.length;i++) {
             var child = chidren[i];
-            this.renderProperty(child,values);
+            this.renderProperty(child,values,callbacks);
         }
         return dom.html();
     }
 };
 
 //我们可能还需要一个jQuery扩展来更方便的使用
-$.fn.renderValues = function(values) {
-    Render.renderDomValues(this,values);
+$.fn.renderValues = function(values,callbacks) {
+    Render.renderDomValues(this,values,callbacks);
 };
 

@@ -12,7 +12,7 @@
     <span render-html="weather"></span>
     <ul render-loop="seven_days">
         <li>
-            <span render-html="seven_days.weather"></span>
+            <span render-fun="get_weather" render-key="seven_days.weather"></span>
             <ul render-loop="seven_days.test">
                 <li render-html="seven_days.test.haha"></li>
             </ul>
@@ -71,7 +71,11 @@
 
         uid: 1987
     };
-    $(".info").renderValues(data);
+    $(".info").renderValues(data,{
+        'get_weather':function(item,value) {
+            $(item).html(value+1);
+        }
+    });
 </script>
 </body>
 </html>
