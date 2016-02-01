@@ -19,6 +19,7 @@
 </div>
 <script>
 
+    //注意如果用域名访问,会有跨域的问题
     $.getJSON("http://api.qjhtv.com/api/app/?action=get_weather",{},function(data) {
         $(".info").renderValues(data,{
             'get_weather':function(item,value) {
