@@ -1,3 +1,5 @@
+
+
 # jrender
 一个基于jQuery的json数据快速展示系统
 支持嵌套循环噢
@@ -53,7 +55,7 @@ $(".info").renderValues(data);
 </div>
 ```
 
-2.可以render的类型有如下一个
+2.可以render的类型有如下几个
 <pre>
 render-html, 
 render-src, 
