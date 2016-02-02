@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>例子</title>
+    <script src="http://lib.sinaapp.com/js/jquery/1.9.1/jquery-1.9.1.min.js"></script>
+    <script src="../jrender.js"></script>
+</head>
+<body>
+<div class="info">
+    <div render-html="weather"></div>
+    <div render-key="tem_now" render-fun="formate_tem"></div>
+    <ul render-loop="seven_days">
+        <li>
+            <span render-html="seven_days.day_name"></span>
+            <span render-fun="get_weather" render-key="seven_days.weather"></span>
+        </li>
+    </ul>
+</div>
+<script>
+
+
+
+    //注意如果用域名访问,会有跨域的问题
+    $.getJSON("http://api.qjhtv.com/api/app/?action=get_weather",{},function(data) {
+        $(".info").renderValues(data,{
+            'get_weather':function(item,value) {
+                if(value.indexOf('雨')!=-1) {
+                    $(item).html(value+'(注意带伞)');
+                } else {
+                    $(item).html(value);
+                }
+            },
+            formate_tem:function(item,value){
+                $(item).html(value+'℃');
+            }
+        });
+    })
+
+
+</script>
+</body>
+</html>
