@@ -65,3 +65,7 @@ render-loop,
 render-attr(这个类型自定义属性例子:render-attr="userid=uid")
 render-key(这个需要一个提供一个render-fun来提供回调函数名，这个回调函数需要在第三个参数传递进来，详情看exmples)
 </pre>
+
+### 注意
+Jrender目前还不支持table
+
