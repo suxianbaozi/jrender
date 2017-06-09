@@ -1,7 +1,7 @@
 
 
 # jrender
-a fast data render based on jQuery  which could be convenient for fast show data in html from json 
+a fast data render based on jQuery  which could be convenient for show data in html from json 
 
 一个基于jQuery的json数据快速展示系统
 
