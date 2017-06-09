@@ -1,11 +1,12 @@
 
 
 # jrender
+a fast data render based on jQuery  which could be convenient for fast show data in html from json 
 一个基于jQuery的json数据快速展示系统
-支持嵌套循环噢
 
-#用法
-####html代码
+
+#sample
+#### html code
 ```html
 <div class="info">
 	<span render-html="weather"></span>
@@ -14,31 +15,36 @@
 	</ul>
 </div>
 ```
-####js代码
+#### js code
 ```javascript
 var data = {
-    weather:'晴',
+    weather:'sunshine',
     seven_days:[
         {
-            weather:'阴'
+            weather:'windy'
         },
         {
-            weather:'雾霾'
+            weather:'rainy'
         },
         {
-            weather:'小雨'
+            weather:'cloud'
         }
     ]
 };
 $(".info").renderValues(data);
 ```
-#说明
+#desc
 1.所有的数据展示都是在某一个标签内
-比如
+all kind data must be show at one html element
+
+sample
 ```html
 <span render-html="username"></span>
 ```
-循环类型的只循环，子元素的第一个元素，所以尽量套一个div进去
+if the type is loop, the child element should be surrounded with a div
+循环类型的子循环，子元素的第一个元素，所以尽量套一个div进去
+
+### right
 ```html
 <div render-loop="seven_days">
     <div>
@@ -47,7 +53,7 @@ $(".info").renderValues(data);
     </div>
 </div>
 ```
-####错误的写法
+#### wrong 
 ```html
 <div render-loop="seven_days">
     <span render-html="seven_days.temperature"></span>
@@ -55,17 +61,17 @@ $(".info").renderValues(data);
 </div>
 ```
 
-2.可以render的类型有如下几个
+2. type list which can be render
 <pre>
 render-html, 
 render-src, 
 render-value, 
 render-href, 
 render-loop, 
-render-attr(这个类型自定义属性例子:render-attr="userid=uid")
-render-key(这个需要一个提供一个render-fun来提供回调函数名，这个回调函数需要在第三个参数传递进来，详情看exmples)
+render-attr(self defined property:render-attr="userid=uid")
+render-key(this should provide a render-fun property ,please read exmples)
 </pre>
 
-### 注意
-Jrender目前还不支持table
+### node
+Jrender don't support table now
 
