@@ -2,6 +2,7 @@
 
 # jrender
 a fast data render based on jQuery  which could be convenient for fast show data in html from json 
+
 一个基于jQuery的json数据快速展示系统
 
 
@@ -35,13 +36,15 @@ $(".info").renderValues(data);
 ```
 #desc
 1.所有的数据展示都是在某一个标签内
-all kind data must be show at one html element
+
+all kind of data must be show at one html element
 
 sample
 ```html
 <span render-html="username"></span>
 ```
 if the type is loop, the child element should be surrounded with a div
+
 循环类型的子循环，子元素的第一个元素，所以尽量套一个div进去
 
 ### right
