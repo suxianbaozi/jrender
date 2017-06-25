@@ -54,7 +54,7 @@ var Render = {
                 html = decodeURIComponent($(child).attr('row-html'));
             }
             $(child).html('');
-            $(values[key]).each(function(index,value) {
+            $((key=='.')?values:values[key]).each(function(index,value) {
                 if(typeof value!='object') {
                     var tmp = {
                         'self':value
