@@ -75,6 +75,6 @@ render-attr(self defined property:render-attr="userid=uid")
 render-key(this should provide a render-fun property ,please read exmples)
 </pre>
 
-### node
+### note
 Jrender don't support table now
 
