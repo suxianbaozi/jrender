@@ -15,6 +15,8 @@ a fast data render based on jQuery  which could be convenient for show data in h
 
 3.轻量无依赖，如果你不考虑angular，value 这种大家伙
 
+4.特别适应于小页面开发，比如移动端
+
 # 劣势
 暂不支持table，下个版本即将支持
 
