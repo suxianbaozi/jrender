@@ -1,12 +1,24 @@
 
 
 # jrender
+
 a fast data render based on jQuery  which could be convenient for show data in html from json 
 
 一个基于jQuery的json数据快速展示系统
 
 
-#sample
+# 优势
+
+1.无需写无关的script块模板代码
+
+2.支持自定义回调用来处理特殊的数据绑定
+
+3.轻量无依赖，如果你不考虑angular，value 这种大家伙
+
+
+
+# samples
+
 #### html code
 ```html
 <div class="info">
