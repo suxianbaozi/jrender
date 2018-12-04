@@ -1,6 +1,6 @@
 
 
-# jrender
+# Jrender
 
 a fast data render based on jQuery  which could be convenient for show data in html from json 
 
