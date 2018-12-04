@@ -7,7 +7,7 @@ a fast data render based on jQuery  which could be convenient for show data in h
 一个基于jQuery的json数据快速展示系统
 
 
-# advantage/优势
+# Advantage/优势
 
 1.无需写无关的script块模板代码
 
