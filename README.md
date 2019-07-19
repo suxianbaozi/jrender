@@ -13,7 +13,7 @@ a fast data render based on jQuery  which could be convenient for show data in h
 
 2.支持自定义回调用来处理特殊的数据绑定
 
-3.轻量无依赖，如果你不考虑angular，value 这种大家伙
+3.轻量无依赖，如果你不考虑angular，vue 这种大家伙
 
 4.特别适应于小页面开发，比如移动端
 
